@@ -205,3 +205,15 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project specific
+uploads/
+data/
+
+# Empty directories
+docs/
+notebooks/
+scripts/
+src\static/
+tests/
+venv\Include/

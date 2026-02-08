@@ -1,80 +1,63 @@
-# [Project Name]
+# Easy Rag Pdf
 
-> [Brief description of the project - one or two sentences]
+> Chat with your documents, your way. Just select your local PDFs and start asking questions. Use Local Mode to keep your data 100% private on your machine, or switch to API Mode for maximum AI intelligence. It's a simple, plug-and-play RAG tool that balances privacy with power. Pick your files, choose your mode, and chat.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/[repo-name])](https://github.com/devMuniz02/[repo-name]/issues)
-[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/[repo-name])](https://github.com/devMuniz02/[repo-name]/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/Easy-RAG-PDF)](https://github.com/devMuniz02/Easy-RAG-PDF/issues)
+[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/Easy-RAG-PDF)](https://github.com/devMuniz02/Easy-RAG-PDF/stargazers)
 
 ## 📋 Table of Contents
 
 - [Features](#features)
 - [Installation](#installation)
-- [Repository Setup](#repository-setup)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [Cleanup](#cleanup)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
 ## ✨ Features
 
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
-- [Add more features as needed]
+- **PDF Upload & Processing**: Upload multiple PDF documents and automatically extract text for analysis
+- **Intelligent Chat**: Ask questions about your documents and get context-aware answers using RAG (Retrieval-Augmented Generation)
+- **Privacy-First Design**: Choose between Local Mode (100% private, runs on your machine) and API Mode (maximum AI intelligence)
+- **File Management**: Easily manage uploaded files, view page counts, and remove documents as needed
+- **Web-Based Interface**: User-friendly web UI for seamless interaction
+- **Persistent Storage**: Uploaded files and processed data are saved for future sessions
+- **Source Citations**: Answers include clickable links to relevant document sections
 
 ## 🚀 Installation
 
 ### Prerequisites
 
-- [List prerequisites, e.g., Node.js v16+, Python 3.8+, etc.]
+- Python 3.8 or higher
+- For Local Mode: A local LLM server (e.g., LM Studio, Ollama, or similar) running on `http://localhost:1234/v1/chat/completions`
+- For API Mode: Internet connection and API access to LLM providers
 
 ### Installation Steps
 
 ```bash
 # Clone the repository
-git clone https://github.com/devMuniz02/[repo-name].git
+git clone https://github.com/devMuniz02/Easy-RAG-PDF.git
 
 # Navigate to the project directory
-cd [repo-name]
+cd Easy-RAG-PDF
 
 # Install dependencies
-npm install
-# or
 pip install -r requirements.txt
-# or
-[other installation commands]
 ```
 
-## � Repository Setup
+## 🚀 Getting Started
 
-After cloning this template repository, run the setup script to automatically populate the README with your repository information:
-
-### Prerequisites for Setup Script
-- Python 3.6+
-- Git configured with remote origin
-
-### Setup Steps
-```bash
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Run the setup script
-python update_readme.py
-```
-
-This script will:
-- Fetch repository information from GitHub API
-- Update the project name and description in README.md
-- Extract the repository name from the git remote URL
-
-**Note:** Make sure your repository has a remote origin set and is pushed to GitHub before running the script.
+After cloning this repository, follow these steps to set up and run the application:
 
 ## 📁 Project Structure
 
 ```
-[repo-name]/
+Easy-RAG-PDF/
 ├── assets/                 # Static assets (images, icons, etc.)
 ├── data/                   # Data files and datasets
 ├── docs/                   # Documentation files
@@ -89,32 +72,93 @@ This script will:
 
 ### Directory Descriptions
 
-- **`assets/`**: Store static files like images, icons, fonts, and other media assets.
-- **`data/`**: Place datasets, input files, and any data-related resources here.
-- **`docs/`**: Additional documentation, guides, and project-related files.
-- **`notebooks/`**: Jupyter notebooks for data exploration, prototyping, and demonstrations.
-- **`scripts/`**: Utility scripts for automation, setup, deployment, or maintenance tasks.
-- **`src/`**: Main source code for the project.
-- **`tests/`**: Unit tests, integration tests, and test-related files.
+- **`assets/`**: Static assets (images, icons, etc.)
+- **`data/`**: Processed document data, FAISS index, and metadata
+- **`docs/`**: Documentation files
+- **`notebooks/`**: Jupyter notebooks for analysis and prototyping
+- **`scripts/`**: Utility scripts and automation tools
+- **`src/`**: Main source code (Flask app and RAG processor)
+- **`tests/`**: Unit tests and test files
+- **`uploads/`**: Uploaded PDF files (created automatically)
+- **`LICENSE`**: MIT License file
+- **`README.md`**: Project documentation
+- **`requirements.txt`**: Python dependencies
+- **`cleanup.py`**: Script to clear all processed data and uploaded files
 
-## �📖 Usage
+## 📖 Usage
+
+### Starting the Application
+
+```bash
+# Navigate to the src directory
+cd src
+
+# Run the Flask application
+python app.py
+```
+
+The application will start on `http://localhost:5000`
 
 ### Basic Usage
 
-```bash
-# Example command
-[command example]
-```
+1. **Upload PDFs**: Click the "Upload PDFs" button and select one or more PDF files
+2. **Select Files**: Choose which uploaded files to include in your chat session
+3. **Configure Mode**: 
+   - **Local Mode**: Uses your local LLM server for maximum privacy
+   - **API Mode**: Connects to external LLM APIs for enhanced capabilities
+4. **Start Chatting**: Ask questions about your documents in natural language
 
 ### Advanced Usage
 
-[Provide more detailed usage examples, code snippets, or screenshots]
+- **File Management**: View uploaded files, see page counts, and remove files you no longer need
+- **Persistent Sessions**: Your uploaded files and processed data are saved between sessions
+- **Source Citations**: Click on citation links in responses to view relevant document sections
+- **Cleanup**: Use `python cleanup.py` to clear all processed data and uploaded files
 
 ## ⚙️ Configuration
 
-[Explain configuration options, environment variables, config files, etc.]
+### Environment Variables
 
-## 🤝 Contributing
+Create a `.env` file in the root directory for custom configuration:
+
+```env
+# Flask configuration
+FLASK_ENV=development
+FLASK_DEBUG=True
+
+# LLM API Configuration (for API Mode)
+API_URL=https://api.openai.com/v1/chat/completions
+MODEL=gpt-3.5-turbo
+API_KEY=your_api_key_here
+
+# Local LLM Configuration (for Local Mode)
+LOCAL_API_URL=http://localhost:1234/v1/chat/completions
+LOCAL_MODEL=local-model
+```
+
+### Application Settings
+
+- **Upload Limit**: Maximum 100MB per file
+- **Supported Formats**: PDF files only
+- **Chunk Size**: 1000 characters with 200 character overlap for text processing
+- **Embedding Model**: Uses `all-MiniLM-L6-v2` for document embeddings
+
+## � Cleanup
+
+To clear all processed data and uploaded files:
+
+```bash
+python cleanup.py
+```
+
+This will remove:
+- FAISS index and document embeddings
+- Processed document metadata
+- All uploaded PDF files
+
+**Warning**: This action cannot be undone. Use with caution.
+
+## �🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -127,20 +171,15 @@ Contributions are welcome! Please follow these steps:
 ### Development Setup
 
 ```bash
-# Install development dependencies
-npm install --dev
-# or
-pip install -r requirements-dev.txt
+# Install development dependencies (if available)
+pip install -r requirements.txt
 
-# Run tests
-npm test
-# or
-python -m pytest
+# Run the application in development mode
+cd src
+python app.py
 
-# Run linting
-npm run lint
-# or
-black .
+# For testing PDF processing
+# Place test PDFs in the uploads/ directory
 ```
 
 ## 📄 License
@@ -153,7 +192,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
 - **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
 
-Project Link: [https://github.com/devMuniz02/[repo-name]](https://github.com/devMuniz02/[repo-name])
+Project Link: [https://github.com/devMuniz02/Easy-RAG-PDF](https://github.com/devMuniz02/Easy-RAG-PDF)
 
 ---
 

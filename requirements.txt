@@ -15,11 +15,23 @@
 # notebook
 
 # Web Development
-# flask
-# django
-# fastapi
-# uvicorn
-# gunicorn
+flask
+flask-cors
+
+# PDF Processing
+PyPDF2
+
+# Embeddings and Vector Search
+sentence-transformers
+faiss-cpu
+
+# LLM API
+requests
+
+# Utilities
+python-dotenv
+tqdm
+rich
 
 # Testing & Quality Assurance
 # pytest
