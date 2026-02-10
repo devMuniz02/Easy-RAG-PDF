@@ -6,18 +6,20 @@
 [![GitHub issues](https://img.shields.io/github/issues/devMuniz02/Easy-RAG-PDF)](https://github.com/devMuniz02/Easy-RAG-PDF/issues)
 [![GitHub stars](https://img.shields.io/github/stars/devMuniz02/Easy-RAG-PDF)](https://github.com/devMuniz02/Easy-RAG-PDF/stargazers)
 
+![Demo](assets/PDFRAG.gif)
+
 ## 📋 Table of Contents
 
-- [Features](#features)
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Cleanup](#cleanup)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Getting Started](#-getting-started)
+- [Project Structure](#-project-structure)
+- [Usage](#-usage)
+- [Configuration](#-configuration)
+- [Cleanup](#-cleanup)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
 ## ✨ Features
 
@@ -186,7 +188,8 @@ python app.py
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**Links:**
+## 📞 Contact
+
 - **GitHub:** [https://github.com/devMuniz02/](https://github.com/devMuniz02/)
 - **LinkedIn:** [https://www.linkedin.com/in/devmuniz](https://www.linkedin.com/in/devmuniz)
 - **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
