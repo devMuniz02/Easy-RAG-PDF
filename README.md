@@ -1,6 +1,6 @@
 # Easy Rag Pdf
 
-> Chat with your documents, your way. Just select your local PDFs and start asking questions. Use Local Mode to keep your data 100% private on your machine, or switch to API Mode for maximum AI intelligence. It's a simple, plug-and-play RAG tool that balances privacy with power. Pick your files, choose your mode, and chat.
+> Your PDF library, now with a brain. 🧠 Stop wasting hours digging through folders; this dead-simple RAG interface turns your local files into an interactive knowledge base. You control the intelligence: simply point the API connection to a local endpoint for 100% air-gapped privacy where no data ever leaves your machine, or link to a cloud provider for maximum reasoning power. No forced uploads, no subscriptions, and zero data leaks—just drop your PDFs, connect your model, and start talking to your data.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub issues](https://img.shields.io/github/issues/devMuniz02/Easy-RAG-PDF)](https://github.com/devMuniz02/Easy-RAG-PDF/issues)
